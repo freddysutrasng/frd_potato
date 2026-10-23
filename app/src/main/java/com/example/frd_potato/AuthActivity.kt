@@ -15,29 +15,64 @@ class AuthActivity : AppCompatActivity() {
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Akses "user_pref" (kode ini selalu dipanggil saat butuh SharedPreferences)
+        // "user_pref" = status login, "akun_pref" = akun hasil Daftar Anggota
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+        val akunPref = getSharedPreferences("akun_pref", MODE_PRIVATE)
 
         binding.btnLogin.setOnClickListener {
-            val username = binding.etUsername.text.toString()
+            val username = binding.etUsername.text.toString().trim()
             val password = binding.etPassword.text.toString()
 
-            if (username.isNotEmpty() && username == password) {
-                // Simpan status login & username
+            // Hapus pesan error lama
+            binding.layoutUsername.error = null
+            binding.layoutPassword.error = null
+
+            // CEK 1: username dan password tidak boleh kosong
+            if (username.isEmpty()) {
+                binding.layoutUsername.error = "Username wajib diisi"
+                return@setOnClickListener
+            }
+            if (password.isEmpty()) {
+                binding.layoutPassword.error = "Password wajib diisi"
+                return@setOnClickListener
+            }
+
+            // CEK 2: apakah akun demo?
+            val akunDemo = (username == "anggota" && password == "123456")
+
+            // CEK 3: apakah akun hasil Daftar Anggota, dan password-nya sama?
+            val passwordTersimpan = akunPref.getString("password_$username", null)
+            val akunTerdaftar = (passwordTersimpan != null && password == passwordTersimpan)
+
+            if (akunDemo || akunTerdaftar) {
+                // Login berhasil -> simpan status login
+                val nama = if (akunDemo) {
+                    "Anggota Demo"
+                } else {
+                    akunPref.getString("nama_$username", username)
+                }
+
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
                 editor.putString("username", username)
+                editor.putString("nama", nama)
                 editor.apply()
 
-                startActivity(Intent(this, BaseActivity::class.java))   // <-- diganti dari MainActivity
-                finish()
+                startActivity(Intent(this, BaseActivity::class.java))
+                finish() // Login ditutup agar tombol back tidak kembali ke sini
             } else {
+                // Login gagal
                 AlertDialog.Builder(this)
                     .setTitle("Login Gagal")
-                    .setMessage("Silahkan coba lagi")
+                    .setMessage("Username atau password salah. Silahkan coba lagi.")
                     .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
                     .show()
             }
+        }
+
+        // Pindah ke halaman Daftar Anggota
+        binding.tvDaftar.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
     }
 }

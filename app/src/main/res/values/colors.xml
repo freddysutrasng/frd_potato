@@ -2,4 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- ===== Color Palette SI-KSP (sesuai grand design) ===== -->
+    <color name="hijau_tua">#0F4D3A</color>   <!-- warna utama: tombol, judul -->
+    <color name="hijau">#1F7A5C</color>       <!-- gradasi splash, aksen -->
+    <color name="hijau_muda">#DDF1E4</color>  <!-- latar ikon menu yang aktif -->
+    <color name="emas">#E8A33D</color>        <!-- koin / aksen kuning -->
+    <color name="krem">#F6F3EA</color>        <!-- latar belakang halaman -->
+    <color name="putih">#FFFFFF</color>       <!-- latar kartu -->
+    <color name="teks_gelap">#1C2B25</color>  <!-- teks utama -->
+    <color name="teks_abu">#6B7A72</color>    <!-- teks keterangan -->
+    <color name="merah">#C0473B</color>       <!-- error / keluar -->
 </resources>

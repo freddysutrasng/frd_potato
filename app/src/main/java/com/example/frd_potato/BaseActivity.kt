@@ -7,10 +7,13 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.frd_potato.Home.HomeFragment
-import com.example.frd_potato.Message.MessageFragment
-import com.example.frd_potato.More.MoreFragment
+import com.example.frd_potato.Pinjaman.PinjamanFragment
+import com.example.frd_potato.Profil.ProfilFragment
+import com.example.frd_potato.Riwayat.RiwayatFragment
+import com.example.frd_potato.Simpanan.SimpananFragment
 import com.example.frd_potato.databinding.ActivityBaseBinding
 
+// BaseActivity = HALAMAN AWAL setelah login (pengganti MainActivity)
 class BaseActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityBaseBinding
@@ -29,7 +32,7 @@ class BaseActivity : AppCompatActivity() {
             insets
         }
 
-        // Fragment default
+        // Fragment default = Beranda
         if (savedInstanceState == null) {
             replaceFragment(HomeFragment())
         }
@@ -40,12 +43,20 @@ class BaseActivity : AppCompatActivity() {
                     replaceFragment(HomeFragment())
                     true
                 }
-                R.id.message -> {
-                    replaceFragment(MessageFragment())
+                R.id.simpanan -> {
+                    replaceFragment(SimpananFragment())
                     true
                 }
-                R.id.more -> {
-                    replaceFragment(MoreFragment())
+                R.id.pinjaman -> {
+                    replaceFragment(PinjamanFragment())
+                    true
+                }
+                R.id.riwayat -> {
+                    replaceFragment(RiwayatFragment())
+                    true
+                }
+                R.id.profil -> {
+                    replaceFragment(ProfilFragment())
                     true
                 }
                 else -> false

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Latar Splash: gradasi hijau ke hijau tua -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="270"
+        android:startColor="@color/hijau"
+        android:endColor="@color/hijau_tua" />
+</shape>

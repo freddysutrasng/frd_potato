@@ -1,9 +1,56 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Frd_potato" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <!-- Tema utama aplikasi SI-KSP -->
+    <style name="Base.Theme.Frd_potato" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Color Palette -->
+        <item name="colorPrimary">@color/hijau_tua</item>
+        <item name="colorOnPrimary">@color/putih</item>
+        <item name="colorPrimaryContainer">@color/hijau_muda</item>
+        <item name="colorOnPrimaryContainer">@color/hijau_tua</item>
+        <item name="colorSecondary">@color/emas</item>
+        <item name="colorOnSecondary">@color/putih</item>
+        <item name="colorSecondaryContainer">@color/hijau_muda</item>
+        <item name="colorOnSecondaryContainer">@color/hijau_tua</item>
+        <item name="colorSurface">@color/putih</item>
+        <item name="colorOnSurface">@color/teks_gelap</item>
+        <item name="colorError">@color/merah</item>
+        <item name="android:colorBackground">@color/krem</item>
+        <item name="android:windowBackground">@color/krem</item>
+
+        <!-- Font: Outfit untuk seluruh teks -->
+        <item name="android:fontFamily">@font/outfit</item>
+        <item name="fontFamily">@font/outfit</item>
+
+        <!-- Gaya bawaan untuk tombol & toolbar -->
+        <item name="materialButtonStyle">@style/SiKsp.Button</item>
+        <item name="toolbarStyle">@style/SiKsp.Toolbar</item>
     </style>
 
     <style name="Theme.Frd_potato" parent="Base.Theme.Frd_potato" />
+
+    <!-- Tombol hijau, sudut membulat -->
+    <style name="SiKsp.Button" parent="Widget.Material3.Button">
+        <item name="android:fontFamily">@font/outfit</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+    <!-- Toolbar krem dengan judul hijau tua (seperti grand design) -->
+    <style name="SiKsp.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/krem</item>
+        <item name="titleTextColor">@color/hijau_tua</item>
+        <item name="subtitleTextColor">@color/teks_abu</item>
+        <item name="titleTextAppearance">@style/SiKsp.ToolbarTitle</item>
+        <item name="navigationIconTint">@color/hijau_tua</item>
+    </style>
+
+    <style name="SiKsp.ToolbarTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">@font/outfit</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Label di Bottom Navigation -->
+    <style name="SiKsp.NavLabel" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:fontFamily">@font/outfit</item>
+    </style>
 </resources>

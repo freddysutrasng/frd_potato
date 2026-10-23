@@ -4,38 +4,85 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2E7D32">
+    android:background="@drawable/bg_splash">
 
+    <!-- Logo SI-KSP di tengah layar -->
     <ImageView
         android:id="@+id/imgSplashLogo"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:src="@drawable/logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:contentDescription="Logo SI-KSP"
+        android:src="@drawable/ic_logo_siksp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.42" />
 
+    <!-- Nama aplikasi -->
     <TextView
         android:id="@+id/tvAppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Selamat Datang "
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:layout_marginTop="20dp"
+        android:text="SI-KSP"
+        android:textColor="@color/putih"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgSplashLogo" />
 
+    <!-- Identitas koperasi -->
+    <TextView
+        android:id="@+id/tvAfdeling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:letterSpacing="0.2"
+        android:text="AFDELING 2 · PT BSP"
+        android:textColor="@color/emas"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAppName" />
+
+    <!-- Slogan di bagian bawah -->
+    <TextView
+        android:id="@+id/tvSlogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="Koperasi Maju, Anggota Sejahtera"
+        android:textColor="@color/putih"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/progressSplash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Garis loading kuning -->
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressSplash"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:indeterminate="true"
+        app:indicatorColor="@color/emas"
+        app:trackColor="@color/hijau"
+        app:trackCornerRadius="4dp"
+        app:layout_constraintBottom_toTopOf="@id/tvVersion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/tvVersion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="40dp"
         android:text="Versi 1.0"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/hijau_muda"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

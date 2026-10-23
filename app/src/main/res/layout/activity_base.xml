@@ -6,8 +6,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/krem"
     tools:context=".BaseActivity">
 
+    <!-- Tempat Fragment (Beranda, Simpanan, Pinjaman, Riwayat, Profil) -->
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="0dp"
@@ -17,10 +19,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Bottom Navigation 5 menu -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/putih"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextAppearanceActive="@style/SiKsp.NavLabel"
+        app:itemTextAppearanceInactive="@style/SiKsp.NavLabel"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
