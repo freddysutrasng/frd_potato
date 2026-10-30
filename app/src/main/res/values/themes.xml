@@ -53,4 +53,10 @@
     <style name="SiKsp.NavLabel" parent="TextAppearance.Material3.LabelMedium">
         <item name="android:fontFamily">@font/outfit</item>
     </style>
+
+    <!-- Bentuk lingkaran untuk foto profil -->
+    <style name="SiKsp.Lingkaran" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

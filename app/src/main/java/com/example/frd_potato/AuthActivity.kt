@@ -2,9 +2,9 @@ package com.example.frd_potato
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.frd_potato.databinding.ActivityAuthBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class AuthActivity : AppCompatActivity() {
 
@@ -15,7 +15,7 @@ class AuthActivity : AppCompatActivity() {
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // "user_pref" = status login, "akun_pref" = akun hasil Daftar Anggota
+        // "user_pref" = status login, "akun_pref" = akun hasil Registrasi
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
         val akunPref = getSharedPreferences("akun_pref", MODE_PRIVATE)
 
@@ -37,20 +37,16 @@ class AuthActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // CEK 2: apakah akun demo?
-            val akunDemo = (username == "anggota" && password == "123456")
+            // KONDISI 1: username sama dengan password
+            val usernameSamaPassword = (username == password)
 
-            // CEK 3: apakah akun hasil Daftar Anggota, dan password-nya sama?
+            // KONDISI 2: username & password sesuai data Registrasi di SharedPreferences
             val passwordTersimpan = akunPref.getString("password_$username", null)
             val akunTerdaftar = (passwordTersimpan != null && password == passwordTersimpan)
 
-            if (akunDemo || akunTerdaftar) {
+            if (usernameSamaPassword || akunTerdaftar) {
                 // Login berhasil -> simpan status login
-                val nama = if (akunDemo) {
-                    "Anggota Demo"
-                } else {
-                    akunPref.getString("nama_$username", username)
-                }
+                val nama = akunPref.getString("nama_$username", username)
 
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
@@ -61,8 +57,8 @@ class AuthActivity : AppCompatActivity() {
                 startActivity(Intent(this, BaseActivity::class.java))
                 finish() // Login ditutup agar tombol back tidak kembali ke sini
             } else {
-                // Login gagal
-                AlertDialog.Builder(this)
+                // Login gagal -> MaterialAlertDialog
+                MaterialAlertDialogBuilder(this)
                     .setTitle("Login Gagal")
                     .setMessage("Username atau password salah. Silahkan coba lagi.")
                     .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
@@ -70,9 +66,14 @@ class AuthActivity : AppCompatActivity() {
             }
         }
 
-        // Pindah ke halaman Daftar Anggota
+        // Tombol Register With Gmail -> halaman input email
+        binding.btnRegisterGmail.setOnClickListener {
+            startActivity(Intent(this, EmailInputActivity::class.java))
+        }
+
+        // Link "Daftar di sini" juga lewat halaman input email
         binding.tvDaftar.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
+            startActivity(Intent(this, EmailInputActivity::class.java))
         }
     }
 }

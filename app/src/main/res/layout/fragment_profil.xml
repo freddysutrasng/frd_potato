@@ -38,17 +38,54 @@
                     android:orientation="vertical"
                     android:padding="24dp">
 
-                    <!-- Inisial nama di dalam lingkaran -->
+                    <!-- Avatar: inisial + foto profil (fitur baru) -->
+                    <FrameLayout
+                        android:id="@+id/layoutAvatar"
+                        android:layout_width="88dp"
+                        android:layout_height="88dp">
+
+                        <!-- Inisial nama (tampil kalau belum ada foto) -->
+                        <TextView
+                            android:id="@+id/tvInisial"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_avatar"
+                            android:gravity="center"
+                            android:text="A"
+                            android:textColor="@color/putih"
+                            android:textSize="32sp"
+                            android:textStyle="bold" />
+
+                        <!-- Foto profil berbentuk lingkaran -->
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/imgFoto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="Foto profil"
+                            android:scaleType="centerCrop"
+                            android:visibility="gone"
+                            app:shapeAppearanceOverlay="@style/SiKsp.Lingkaran" />
+
+                        <!-- Ikon kamera kecil di pojok kanan bawah -->
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="bottom|end"
+                            android:background="@drawable/bg_avatar"
+                            android:backgroundTint="@color/emas"
+                            android:contentDescription="Ganti foto"
+                            android:padding="6dp"
+                            android:src="@drawable/ic_kamera"
+                            app:tint="@color/putih" />
+                    </FrameLayout>
+
                     <TextView
-                        android:id="@+id/tvInisial"
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        android:background="@drawable/bg_avatar"
-                        android:gravity="center"
-                        android:text="A"
-                        android:textColor="@color/putih"
-                        android:textSize="28sp"
-                        android:textStyle="bold" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Ketuk foto untuk mengganti, tekan lama untuk menghapus"
+                        android:textColor="@color/teks_abu"
+                        android:textSize="11sp" />
 
                     <TextView
                         android:id="@+id/tvNama"

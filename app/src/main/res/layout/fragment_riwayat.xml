@@ -12,48 +12,118 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize" />
 
-    <!-- Kartu keterangan fitur (diisi di tahap berikutnya) -->
-    <com.google.android.material.card.MaterialCardView
+    <!-- RIWAYAT + PENCARIAN (fitur baru) -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        app:cardBackgroundColor="@color/putih"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="0dp"
-        app:strokeColor="@color/hijau_muda"
-        app:strokeWidth="1dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
 
-        <LinearLayout
+        <!-- Kolom pencarian -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:padding="24dp">
+            app:cardBackgroundColor="@color/putih"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/hijau_muda"
+            app:strokeWidth="1dp">
 
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:contentDescription="Riwayat Transaksi"
-                android:src="@drawable/ic_riwayat"
-                app:tint="@color/hijau_tua" />
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchRiwayat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:iconifiedByDefault="false"
+                app:queryBackground="@android:color/transparent"
+                app:queryHint="Cari transaksi, contoh: wajib" />
+        </com.google.android.material.card.MaterialCardView>
 
-            <TextView
+        <!-- Filter jenis transaksi (bisa digeser ke samping) -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:scrollbars="none">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipFilter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Semua transaksi kamu"
-                android:textColor="@color/hijau_tua"
-                android:textSize="17sp"
-                android:textStyle="bold" />
+                app:selectionRequired="true"
+                app:singleLine="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipSemua"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Semua" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipSimpanan"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Simpanan" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPenarikan"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Penarikan" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPinjaman"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pinjaman" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAngsuran"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Angsuran" />
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/tvJumlah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="0 transaksi"
+            android:textColor="@color/teks_abu"
+            android:textSize="12sp" />
+
+        <!-- Daftar transaksi + pesan kalau hasil kosong -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRiwayat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingBottom="16dp" />
 
             <TextView
+                android:id="@+id/tvKosong"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:gravity="center"
-                android:text="Di sini nanti tampil daftar setoran, penarikan, pencairan, dan angsuran, dikelompokkan per bulan."
+                android:layout_gravity="center"
+                android:text="Transaksi tidak ditemukan"
                 android:textColor="@color/teks_abu"
-                android:textSize="13sp" />
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+                android:textSize="14sp"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
 </LinearLayout>
