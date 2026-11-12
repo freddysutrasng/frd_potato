@@ -6,47 +6,61 @@
     android:background="@color/krem"
     android:orientation="vertical">
 
-    <!-- Toolbar Halaman Awal: logo + judul aplikasi (tanpa tombol back) -->
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
+    <!-- Header melengkung (Pertemuan 10) di belakang Toolbar -->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+        <View
+            android:id="@+id/background_header"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:background="@drawable/bg_header_wave" />
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:contentDescription="Logo SI-KSP"
-                android:src="@drawable/ic_logo_siksp" />
+        <!-- Toolbar Halaman Awal: logo + judul aplikasi (tanpa tombol back) -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@android:color/transparent">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:orientation="vertical">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-                <TextView
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="Logo SI-KSP"
+                    android:src="@drawable/ic_logo_siksp" />
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SI-KSP"
-                    android:textColor="@color/hijau_tua"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Afdeling 2 · PT BSP"
-                    android:textColor="@color/teks_abu"
-                    android:textSize="12sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SI-KSP"
+                        android:textColor="@color/hijau_tua"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Afdeling 2 · PT BSP"
+                        android:textColor="@color/teks_abu"
+                        android:textSize="12sp" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-    </com.google.android.material.appbar.MaterialToolbar>
+        </com.google.android.material.appbar.MaterialToolbar>
+    </FrameLayout>
+    <!-- ^ FrameLayout DITUTUP DI SINI, tepat setelah Toolbar -->
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -173,6 +187,40 @@
                         app:iconGravity="textStart" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
+
+            <!-- Layanan baru (Pertemuan 10) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Layanan Lainnya"
+                android:textColor="@color/teks_gelap"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPesan"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="52dp"
+                android:text="Pesan dari Pengurus"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_message"
+                app:iconGravity="textStart" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPertemuan9"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minHeight="52dp"
+                android:text="Pertemuan 9 · Form Pengajuan Pinjaman"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_pinjaman"
+                app:iconGravity="textStart" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

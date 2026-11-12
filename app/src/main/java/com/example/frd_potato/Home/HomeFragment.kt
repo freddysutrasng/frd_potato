@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.frd_potato.WebViewActivity
 import com.example.frd_potato.databinding.FragmentHomeBinding
+import com.example.frd_potato.Home.pertemuan_9.NinthActivity
+import com.example.frd_potato.Message.MessageActivity
 
 // Fragment Beranda (halaman pertama setelah login)
 class HomeFragment : Fragment() {
@@ -41,6 +43,16 @@ class HomeFragment : Fragment() {
         // Tombol ke halaman web
         binding.btnWebView.setOnClickListener {
             startActivity(Intent(requireContext(), WebViewActivity::class.java))
+        }
+
+        // Ke halaman Pesan dari Pengurus (ListView Custom Adapter)
+        binding.btnPesan.setOnClickListener {
+            startActivity(Intent(requireContext(), MessageActivity::class.java))
+        }
+
+        // Ke halaman Pertemuan 9 (NinthActivity)
+        binding.btnPertemuan9.setOnClickListener {
+            startActivity(Intent(requireContext(), NinthActivity::class.java))
         }
     }
 

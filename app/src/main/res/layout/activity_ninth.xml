@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/krem"
+    android:fitsSystemWindows="true"
+    tools:context=".Home.pertemuan_9.NinthActivity">
+
+    <!-- Toolbar + tombol back -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 1. TextInputLayout: nominal pinjaman -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="12dp"
+        android:hint="Nominal pinjaman"
+        app:counterEnabled="true"
+        app:counterMaxLength="9"
+        app:errorEnabled="true"
+        app:helperText="Minimal Rp 500.000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:prefixText="Rp "
+        app:startIconDrawable="@drawable/ic_pinjaman">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNominal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="9" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- 2. Chip & ChipGroup: tenor -->
+    <TextView
+        android:id="@+id/tvLabelTenor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:text="Tenor (lama cicilan)"
+        android:textColor="@color/teks_abu"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupTenor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelTenor"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip3"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="3 bulan" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip6"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6 bulan" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip12"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12 bulan" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <!-- 3. GridLayout: 6 tombol keperluan, 3 kolom -->
+    <TextView
+        android:id="@+id/tvLabelKeperluan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:text="Keperluan pinjaman"
+        android:textColor="@color/teks_abu"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroupTenor" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridKeperluan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:columnCount="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelKeperluan"
+        app:useDefaultMargins="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUsaha"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Usaha"
+            android:textSize="13sp"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPendidikan"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sekolah"
+            android:textSize="13sp"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnKesehatan"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Kesehatan"
+            android:textSize="13sp"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPupuk"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pupuk"
+            android:textSize="13sp"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSembako"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sembako"
+            android:textSize="13sp"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDarurat"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Darurat"
+            android:textSize="13sp"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+    </androidx.gridlayout.widget.GridLayout>
+
+    <!-- 4. EditText dengan background drawable (sudut membulat) -->
+    <EditText
+        android:id="@+id/etCatatan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/edit_text_background"
+        android:gravity="top|start"
+        android:hint="Catatan untuk pengurus (opsional)"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridKeperluan" />
+
+    <!-- 5. MaterialButton dengan ikon -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAjukan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        android:minHeight="56dp"
+        android:text="Ajukan Pinjaman"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_check_circle"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCatatan" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

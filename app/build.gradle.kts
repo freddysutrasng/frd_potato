@@ -36,6 +36,9 @@ android {
 
 dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7") // untuk lifecycleScope
+    implementation(libs.glide)
+    annotationProcessor(libs.glide.compiler)
+    implementation(libs.androidx.gridlayout)
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
