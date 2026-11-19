@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Kartu Total Simpanan: gradasi hijau + lingkaran hiasan di kanan atas (sesuai grand design) -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Lapisan 1: gradasi hijau tua ke hijau -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="315"
+                android:endColor="@color/hijau"
+                android:startColor="@color/hijau_tua"
+                android:type="linear" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+
+    <!-- Lapisan 2: lingkaran emas transparan di pojok kanan atas -->
+    <item
+        android:width="140dp"
+        android:height="140dp"
+        android:gravity="top|end"
+        android:right="-40dp"
+        android:top="-40dp">
+        <shape android:shape="oval">
+            <solid android:color="#33E8A33D" />
+        </shape>
+    </item>
+</layer-list>

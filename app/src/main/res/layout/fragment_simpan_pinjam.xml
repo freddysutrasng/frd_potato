@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hijau_muda"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="36dp"
+    android:paddingBottom="120dp">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/bg_avatar"
+        android:contentDescription="Simpan dan pinjam"
+        android:padding="36dp"
+        android:src="@drawable/ic_simpanan"
+        app:tint="@color/putih" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="Setor, Tarik &amp; Pinjam"
+        android:textColor="@color/hijau_tua"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:text="Cek saldo simpanan pokok, wajib, dan sukarela. Ajukan pinjaman dan langsung lihat cicilan per bulannya, tanpa antre ke kantor koperasi."
+        android:textColor="@color/teks_gelap"
+        android:textSize="15sp" />
+</LinearLayout>

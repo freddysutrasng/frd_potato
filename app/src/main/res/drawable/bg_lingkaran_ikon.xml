@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Lingkaran di belakang ikon. Warnanya diatur per kotak lewat android:backgroundTint -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/hijau_muda" />
+</shape>

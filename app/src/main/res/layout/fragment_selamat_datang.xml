@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/krem"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="36dp"
+    android:paddingBottom="120dp">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:contentDescription="Logo SI-KSP"
+        android:src="@drawable/ic_logo_siksp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="Selamat Datang di SI-KSP Mobile"
+        android:textColor="@color/hijau_tua"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:text="Koperasi Maju, Anggota Sejahtera. Koperasi Simpan Pinjam Afdeling 2 PT BSP kini ada di HP-mu."
+        android:textColor="@color/teks_abu"
+        android:textSize="15sp" />
+</LinearLayout>

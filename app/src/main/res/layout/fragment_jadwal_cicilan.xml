@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tab Jadwal: jadwal cicilan per bulan (grand design: SHOULD "jadwal angsuran otomatis") -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/krem">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jadwal Cicilan"
+            android:textColor="@color/hijau_tua"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Pinjaman Rp 1.000.000 · tenor 3 bulan"
+            android:textColor="@color/teks_abu"
+            android:textSize="13sp" />
+
+        <!-- Rumus dari grand design: cicilan = nominal ÷ tenor -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_kotak_menu"
+            android:padding="14dp"
+            android:text="Cicilan per bulan = nominal ÷ tenor\nRp 1.000.000 ÷ 3 = Rp 333.334"
+            android:textColor="@color/teks_gelap"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_kotak_menu"
+            android:padding="14dp"
+            android:text="Cicilan 1 · 25 Oktober 2026 · Rp 333.334 · LUNAS"
+            android:textColor="@color/hijau_tua"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_kotak_menu"
+            android:padding="14dp"
+            android:text="Cicilan 2 · 25 November 2026 · Rp 333.334 · BELUM"
+            android:textColor="@color/emas"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_kotak_menu"
+            android:padding="14dp"
+            android:text="Cicilan 3 · 25 Desember 2026 · Rp 333.332 · BELUM"
+            android:textColor="@color/teks_abu"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</ScrollView>

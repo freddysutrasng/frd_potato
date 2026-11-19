@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/krem"
+    android:fitsSystemWindows="true"
+    tools:context=".Onboarding.OnboardingActivity">
+
+  <!-- Halaman-halaman panduan (digeser kiri/kanan) -->
+  <androidx.viewpager2.widget.ViewPager2
+      android:id="@+id/vpOnboarding"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <!-- Titik penanda halaman (library DotsIndicator) -->
+  <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+      android:id="@+id/dotsOnboarding"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="24dp"
+      app:dotsColor="@color/hijau_tua"
+      app:dotsCornerRadius="8dp"
+      app:dotsSize="10dp"
+      app:dotsSpacing="4dp"
+      app:dotsWidthFactor="2.5"
+      app:layout_constraintBottom_toTopOf="@id/btnLanjut"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:progressMode="false"
+      app:selectedDotColor="@color/emas" />
+
+  <!-- Tombol Lewati -->
+  <com.google.android.material.button.MaterialButton
+      android:id="@+id/btnLewati"
+      style="@style/Widget.Material3.Button.TextButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="20dp"
+      android:layout_marginBottom="24dp"
+      android:text="Lewati"
+      android:textColor="@color/teks_abu"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <!-- Tombol Lanjut / Mulai -->
+  <com.google.android.material.button.MaterialButton
+      android:id="@+id/btnLanjut"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="20dp"
+      android:layout_marginBottom="24dp"
+      android:minWidth="120dp"
+      android:text="Lanjut"
+      android:backgroundTint="@color/hijau_tua"
+      app:cornerRadius="12dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

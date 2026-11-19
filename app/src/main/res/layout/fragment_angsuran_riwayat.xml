@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/putih"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="36dp"
+    android:paddingBottom="120dp">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/bg_lingkaran_ikon"
+        android:contentDescription="Angsuran dan riwayat"
+        android:padding="36dp"
+        android:src="@drawable/ic_angsuran"
+        app:tint="@color/hijau_tua" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="Pantau Angsuran &amp; Riwayat"
+        android:textColor="@color/hijau_tua"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:text="Lihat sisa pinjaman, jadwal cicilan, dan semua transaksi. Pengingat angsuran muncul di Notifikasi."
+        android:textColor="@color/teks_abu"
+        android:textSize="15sp" />
+</LinearLayout>

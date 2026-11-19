@@ -62,9 +62,7 @@ class SimpananFragment : Fragment() {
             requireContext(),
             android.R.layout.simple_list_item_1,
             dataList
-        )
-
-        // Hubungkan ListView dengan adapter
+        ) // Hubungkan ListView dengan adapter
         binding.listViewItems.adapter = adapter
 
         // Aksi saat item diklik

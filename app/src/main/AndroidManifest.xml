@@ -63,14 +63,29 @@
         <activity
             android:name=".ProfilDeveloperActivity"
             android:exported="false" />
+
+        <!-- Pesan dari Pengurus (Pertemuan 10) -->
         <activity
             android:name=".Message.MessageActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Form Pengajuan Pinjaman (Pertemuan 9) - nama package DIPERBAIKI -->
         <activity
-            android:name=".Home.Pertemuan9.NinthActivity"
+            android:name=".Home.pertemuan_9.NinthActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Pertemuan 11: Info & Layanan (TabLayout + RecyclerView) -->
+        <activity
+            android:name=".Layanan.LayananActivity"
+            android:exported="false" />
+
+        <!-- Pertemuan 11: On Board Screen -->
+        <activity
+            android:name=".Onboarding.OnboardingActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

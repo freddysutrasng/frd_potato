@@ -13,4 +13,9 @@
     <color name="teks_gelap">#1C2B25</color>  <!-- teks utama -->
     <color name="teks_abu">#6B7A72</color>    <!-- teks keterangan -->
     <color name="merah">#C0473B</color>       <!-- error / keluar -->
+    <!-- Tambahan Pertemuan 11: lingkaran ikon Menu Cepat (sesuai grand design) -->
+    <color name="merah_muda">#FBE6E3</color>
+    <color name="emas_muda">#FCEFD8</color>
+    <color name="biru">#2C6AA6</color>
+    <color name="biru_muda">#E2EDF8</color>
 </resources>
